@@ -3,6 +3,7 @@ import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { join } from 'path';
 import { ClassroomsModule } from './modules/classrooms/modules/classroom.module';
+import { StudentsModule } from './modules/students/modules/students.module';
 import { SubjectModule } from './modules/subjects/modules/subject.module';
 
 @Module({
@@ -13,6 +14,7 @@ import { SubjectModule } from './modules/subjects/modules/subject.module';
     }),
     SubjectModule,
     ClassroomsModule,
+    StudentsModule,
   ],
   controllers: [],
   providers: [],

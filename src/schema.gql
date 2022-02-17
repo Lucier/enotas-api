@@ -14,6 +14,14 @@ A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date
 """
 scalar DateTime
 
+type Student {
+  id: ID!
+  name: String!
+  registration: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
 type Subject {
   id: ID!
   name: String!
@@ -26,6 +34,8 @@ type Query {
   subject(id: String!): Subject!
   classrooms: [Classroom!]!
   classroom(id: String!): Classroom!
+  students: [Student!]!
+  student(id: String!): Student!
 }
 
 type Mutation {
@@ -35,6 +45,9 @@ type Mutation {
   createClassroom(createClassroomInput: CreateClassroomInput!): Classroom!
   updateClassroom(updateClassroomInput: UpdateClassroomInput!): Classroom!
   removeClasroom(id: String!): Classroom!
+  createStudent(createStudentInput: CreateStudentInput!): Student!
+  updateStudent(updateStudentInput: UpdateStudentInput!): Student!
+  removeStudent(id: String!): Student!
 }
 
 input CreateSubjectInput {
@@ -52,5 +65,16 @@ input CreateClassroomInput {
 
 input UpdateClassroomInput {
   name: String!
+  id: String!
+}
+
+input CreateStudentInput {
+  name: String!
+  registration: String!
+}
+
+input UpdateStudentInput {
+  name: String!
+  registration: String!
   id: String!
 }

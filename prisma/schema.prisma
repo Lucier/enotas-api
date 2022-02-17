@@ -24,3 +24,13 @@ model Classroom {
 
   @@map("classroom")
 }
+
+model Student {
+  id           String   @id @default(uuid())
+  name         String
+  registration String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@map("student")
+}
