@@ -2,6 +2,7 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { join } from 'path';
+import { ClassroomsModule } from './modules/classrooms/modules/classroom.module';
 import { SubjectModule } from './modules/subjects/modules/subject.module';
 
 @Module({
@@ -11,6 +12,7 @@ import { SubjectModule } from './modules/subjects/modules/subject.module';
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
     }),
     SubjectModule,
+    ClassroomsModule,
   ],
   controllers: [],
   providers: [],

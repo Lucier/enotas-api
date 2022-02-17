@@ -15,3 +15,12 @@ model Subject {
 
   @@map("subject")
 }
+
+model Classroom {
+  id        String   @id @default(uuid())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("classroom")
+}
